@@ -26,9 +26,19 @@ const DATA = {
       'Deloitte — validating and loading large datasets, and writing Python ' +
       'and SQL checks that keep source and target in agreement. I build ' +
       'machine-learning pipelines and web applications on the side.',
-    // No résumé is published — the hero download button removes itself when
-    // this is empty. Set it to a path or link if you ever want it back.
+    // No résumé is published. Leave empty and the hero shows the "email for
+    // résumé" button below instead; set a path or URL and it becomes a
+    // download button automatically.
     resumeUrl: '',
+
+    // Hero secondary button, used whenever resumeUrl is empty. Opens a
+    // pre-addressed email with the subject filled in. If you switch on the
+    // Formspree form, this points at the form instead so your address stays
+    // out of the page. Set to null to show no second button at all.
+    resumeCta: {
+      label:   'Email for résumé',
+      subject: 'Résumé request'
+    },
     // Background removed and compressed to 60KB WebP so it sits cleanly on
     // both the light and dark backgrounds. Original kept as a .bak alongside.
     portrait: 'assets/img/portrait.webp'

@@ -136,24 +136,60 @@
         return `<li><a href="${esc(url)}" ${url.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>${esc(l.label)}</a></li>`;
       }).join(''));
 
-      const resume = $('#resume-link');
-      if (resume) {
-        if (profile.resumeUrl) {
-          resume.href = profile.resumeUrl;
-          // A hosted file (Drive, Dropbox) opens in a tab; a local file downloads.
-          if (profile.resumeUrl.startsWith('http')) {
-            resume.removeAttribute('download');
-            resume.target = '_blank';
-            resume.rel = 'noopener noreferrer';
-          }
-        } else {
-          resume.remove();
-        }
-      }
+      this.resumeButton(d);
 
       if (!profile.available) $('.hero-eyebrow')?.remove();
 
       Typewriter.start(profile.roles ?? []);
+    },
+
+    /**
+     * Hero secondary button. Three states:
+     *   resumeUrl set   -> download / open the file
+     *   resumeCta set   -> pre-addressed email, or the form if one is enabled
+     *   neither         -> no button
+     */
+    resumeButton(d) {
+      const btn = $('#resume-link');
+      if (!btn) return;
+
+      const { profile, contact = {} } = d;
+
+      const ICON = {
+        download: '<path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/>',
+        mail:     '<path d="M3 6.5h18v11H3z"/><path d="m3 7 9 6 9-6"/>'
+      };
+      const paint = (label, icon) => {
+        btn.innerHTML =
+          `${esc(label)}<svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg>`;
+      };
+
+      if (profile.resumeUrl) {
+        btn.href = profile.resumeUrl;
+        paint('Download résumé', ICON.download);
+        if (profile.resumeUrl.startsWith('http')) {
+          btn.target = '_blank';
+          btn.rel = 'noopener noreferrer';
+        } else {
+          btn.setAttribute('download', '');
+        }
+        return;
+      }
+
+      const cta = profile.resumeCta;
+      if (!cta) { btn.remove(); return; }
+
+      if (contact.formspreeId) {
+        // Form is live, so the address must not appear in the page.
+        btn.href = '#contact';
+      } else if (contact.email) {
+        btn.href = `mailto:${contact.email}` +
+          (cta.subject ? `?subject=${encodeURIComponent(cta.subject)}` : '');
+      } else {
+        btn.href = '#contact';
+      }
+
+      paint(cta.label ?? 'Email for résumé', ICON.mail);
     },
 
     about(about = {}) {

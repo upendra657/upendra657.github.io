@@ -86,10 +86,19 @@ should stay there.
 
 A few notes:
 
-- **Résumé** — deliberately not published. `profile.resumeUrl` is empty, which
-  removes the hero download button automatically. To publish one again, drop a
-  PDF in `assets/docs/` and set the path (or use a Google Drive link — links
-  starting with `http` open in a new tab, local paths download).
+- **Résumé** — deliberately not published. The hero's second button is driven
+  by two fields and picks its own state:
+
+  | Config | Button |
+  |---|---|
+  | `resumeUrl` set | "Download résumé" → the file |
+  | `resumeUrl` empty, `resumeCta` set | "Email for résumé" → pre-addressed email |
+  | `resumeCta: null` too | no button at all |
+
+  To publish a résumé again, drop a PDF in `assets/docs/` and set
+  `profile.resumeUrl` (a Google Drive link works too — `http` links open in a
+  new tab, local paths download). Edit the button wording and the email
+  subject line in `profile.resumeCta`.
 - **Phone number** — removed from the site. It was in `about.details`; add a
   `{ label: 'Phone', value: '…' }` entry back if you ever want it.
 - **Portrait** — `assets/img/portrait.webp`. The studio white background was

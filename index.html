@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upendra Sharma — Software Engineer</title>
+<meta name="description" content="Portfolio of Upendra Sharma — data analyst and software engineer working on enterprise data migration.">
+<meta name="author" content="Upendra Sharma">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Upendra Sharma — Software Engineer">
+<meta property="og:description" content="Portfolio of Upendra Sharma — data analyst and software engineer working on enterprise data migration.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text y='.9em' x='.12em' font-size='78' font-family='Helvetica,Arial' font-weight='700' fill='%23fff'>U</text></svg>">
+
+<!-- Fonts are self-hosted in assets/fonts — no third-party requests, so no
+     visitor IPs leak to Google. Preloading the two most-used weights. -->
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Content is rendered by JS, so give non-JS visitors something real.
+     Deliberately no email address here: this block sits in the raw HTML and
+     would be the easiest thing on the page for a harvester to scrape. -->
+<noscript>
+  <div class="noscript">
+    <div class="wrap">
+      <h1>Upendra Sharma</h1>
+      <p>Data analyst and software engineer, based in Bengaluru. This site needs
+         JavaScript to render — you can reach me at either of these instead:</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/upendra-sharma-21783a1a9/">linkedin.com/in/upendra-sharma</a></li>
+        <li><a href="https://github.com/upendra657">github.com/upendra657</a></li>
+      </ul>
+    </div>
+  </div>
+</noscript>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top" aria-label="Home">
+      <span class="wordmark-mark" aria-hidden="true"></span>
+      <span class="wordmark-text" data-bind="nav.wordmark">US</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-list" id="nav-list"><!-- rendered --></ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" type="button"
+              aria-label="Switch colour theme" title="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.2 5.2l1.9 1.9M16.9 16.9l1.9 1.9M18.8 5.2l-1.9 1.9M7.1 16.9l-1.9 1.9"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.4A8.6 8.6 0 1 1 9.6 3.5a7 7 0 0 0 10.9 10.9Z"/></svg>
+      </button>
+
+      <button class="menu-toggle" id="menu-toggle" type="button"
+              aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="header-rule"></div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div class="hero-meta">
+          <span class="tick">Portfolio</span>
+          <span class="tick" data-bind="profile.year">2026</span>
+        </div>
+
+        <div class="hero-body">
+          <p class="hero-eyebrow" data-bind="profile.available"></p>
+          <h1 class="hero-name" data-bind="profile.name">Upendra Sharma</h1>
+          <p class="hero-role">
+            <span data-bind="profile.role"></span>
+            <span class="hero-cursor" aria-hidden="true"></span>
+          </p>
+          <p class="hero-summary" data-bind="profile.summary"></p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" id="resume-link" href="#" download>
+              Download résumé
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-facts">
+          <dl id="hero-facts-list"><!-- rendered --></dl>
+        </aside>
+
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ul class="hero-links" id="hero-links"><!-- rendered --></ul>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">About</h2>
+      </div>
+      <div class="section-body about-grid">
+        <div class="about-prose" id="about-prose"><!-- rendered --></div>
+        <div class="about-side">
+          <div class="portrait" id="portrait-slot"><!-- rendered --></div>
+          <ul class="detail-list" id="about-details"><!-- rendered --></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="section-body">
+        <div class="skills-grid" id="skills-grid"><!-- rendered --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Experience</h2>
+      </div>
+      <div class="section-body">
+        <ol class="exp-list" id="exp-list"><!-- rendered --></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Selected work</h2>
+      </div>
+      <div class="section-body">
+        <div class="proj-grid" id="proj-grid"><!-- rendered --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION + CERTS ============ -->
+  <section class="section" id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Education &amp; credentials</h2>
+      </div>
+      <div class="section-body edu-grid">
+        <div>
+          <h3 class="sub-label">Education</h3>
+          <ol class="edu-list" id="edu-list"><!-- rendered --></ol>
+        </div>
+        <div>
+          <h3 class="sub-label">Certifications</h3>
+          <ul class="cert-list" id="cert-list"><!-- rendered --></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="section-body contact-grid">
+        <div class="contact-lead">
+          <p class="contact-pitch" data-bind="contact.pitch"></p>
+          <a class="contact-email" id="contact-email" href="#"></a>
+          <div id="contact-form-slot"></div>
+          <p class="contact-note" id="contact-note"></p>
+        </div>
+        <ul class="contact-links" id="contact-links"><!-- rendered --></ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="footer-name" data-bind="profile.name"></span>
+    <span class="footer-meta">
+      <span id="footer-year"></span> · Built with plain HTML, CSS &amp; JavaScript
+    </span>
+    <a class="footer-top" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

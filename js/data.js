@@ -165,14 +165,18 @@ const DATA = {
     },
     {
       name: 'HR Management System',
-      year: '2024',
+      year: '2026',
       description:
-        'A web-based HRMS automating employee data management, attendance ' +
-        'tracking and leave requests. Role-based authentication and session ' +
-        'management keep admin and employee data separated; Flask routes were ' +
-        'modularized and database queries optimized for maintainability.',
-      stack: ['Python', 'Flask', 'JavaScript', 'Bootstrap', 'SQLite3'],
+        'Employee directory, timesheets and a leave approval workflow, with ' +
+        'the integrity rules pushed into the database rather than left in ' +
+        'application code. Includes a data quality module — ten checks that ' +
+        'reconcile the leave table against the timesheet and report exactly ' +
+        'where they disagree, the same problem as migration reconciliation. ' +
+        'Rebuilt from a prototype I wrote during an internship in Kampala; ' +
+        '278 tests run against PostgreSQL in CI.',
+      stack: ['Python', 'Flask', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'Docker', 'pytest'],
       links: [
+        { label: 'Live demo', url: 'https://hrms-5e8y.onrender.com' },
         { label: 'Source', url: 'https://github.com/upendra657/HR-Management-System' }
       ]
     }

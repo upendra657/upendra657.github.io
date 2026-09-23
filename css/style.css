@@ -581,6 +581,18 @@ ul, ol { list-style: none; }
 }
 .skill-group:hover { background: var(--paper-2); }
 
+/* A group left alone on the final row stretches across it, so group counts
+   that are not a multiple of the column count still leave no empty cells. */
+.skill-group:last-child:nth-child(3n+2) { grid-column: span 2; }
+.skill-group:last-child:nth-child(3n+1) { grid-column: span 3; }
+@media (max-width: 900px) {
+  .skill-group:last-child:nth-child(n)   { grid-column: auto; }
+  .skill-group:last-child:nth-child(odd) { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .skill-group:last-child:nth-child(odd) { grid-column: auto; }
+}
+
 .skill-group h3 {
   display: flex;
   align-items: baseline;

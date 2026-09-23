@@ -25,15 +25,9 @@ reorder your skills — the page reflows on its own.
 
 ## Editing content
 
-Open `js/data.js`. It is already populated from your résumé. Two things are
-still marked `// CHECK`:
-
-1. **LinkedIn URL** — `links` and `contact.links` point at a bare
-   `linkedin.com/in/`. Add your handle.
-2. **Premier League Predictor year** — guessed as 2025.
-
-Also worth a decision: `about.details` publishes your phone number. Delete that
-line if you would rather not have it scraped.
+Open `js/data.js`. It is kept in sync with your résumé (last updated from the
+Data Analyst résumé, Sept 2026). One thing is still marked `// CHECK`: the
+Premier League Predictor year, guessed as 2025.
 
 Two syntax rules cause almost all breakage: keep the commas between `{ }`
 blocks, and escape apostrophes inside single-quoted strings (`'Deloitte\'s'`).

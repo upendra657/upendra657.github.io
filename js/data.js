@@ -19,7 +19,8 @@ const DATA = {
     roles: [
       'Data Analyst',
       'Business Analyst',
-      'Product Analyst'
+      'Product Analyst',
+      'Analytics Engineer'
     ],
     summary:
       'Data Analyst at Deloitte India, with experience across Retail, IT ' +
